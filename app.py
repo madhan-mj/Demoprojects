@@ -16,12 +16,11 @@ if not os.path.exists(UPLOAD_FOLDER):
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 results_db = []  # for detection history
-
-def load_users():
-    if os.path.exists("users.json"):
-        with open("users.json", "r") as f:
-            return json.load(f)
-    return {}
+    # return Response(
+    #     output,
+    #     mimetype="text/csv",
+    #     headers={"Content-Disposition": "attachment;filename=report.csv"}
+    # )
 
 def save_users(users):
     with open("users.json", "w") as f:
